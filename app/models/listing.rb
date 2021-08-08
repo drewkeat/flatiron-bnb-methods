@@ -24,6 +24,9 @@ class Listing < ActiveRecord::Base
     true
   end
 
+  def average_review_rating
+    self.reviews.average(:rating)
+  end
   private
 
     def remove_host
